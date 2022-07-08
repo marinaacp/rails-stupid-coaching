@@ -1,0 +1,26 @@
+
+<% if @question == 'I am going to work' %>
+  <div class = banner>
+    <%= "#{@question}. " %>
+    <br>
+    Great
+    <br>
+  </div>
+    <a> <%= link_to "Go ask something else", ask_path %> </a>
+    <% elsif @question.end_with?('?') %>
+  <div class = banner>
+    <%= "#{@question}. " %>
+    <br>
+    Silly question, get dressed and go to work!
+    <br>
+  </div>
+    <a> <%= link_to "Go ask something else", ask_path %> </a>
+    <% else %>
+  <div class = banner>
+    <%= "#{@question}. " %>
+    <br>
+    I do not care, get dressed and go to work!
+    <br>
+  </div>
+  <a>  <%= link_to "Go ask something else", ask_path %> </a>
+<% end %>
